@@ -108,24 +108,7 @@ body {
     .img_ajuste{
        width: 50%;
     }
-    #papasrusticas {
-        background-color: #FA0050;;
-        height: 150px;
-        width: 150px;
-        margin-left: 85px;
-        float: left;
-        background-image: url(images/papasrusticas.jpg);
-        background-size: cover;
-    }
-    .img_ajuste2 {
-        background-color: #FA0050;;
-        height: 150px;
-        width: 150px;
-        margin-left: 85px;
-        float: left;
-        background-image: url(image/hamburs.jpg);
-        background-size: cover;
-    }
+    
     .img_ajuste3 {
        width: 50%;
     }
