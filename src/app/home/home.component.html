@@ -1,58 +1,32 @@
- <header>
-  
-      <img src="assets/images/logo.png" alt="logo" class="logo">
-      <div>
-        <h1 class="title">Customer Service Bar</h1>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col mb-4">
-            <i class="fas fa-bars menu-button" onclick="toggleMenu(event)"></i>
-          </div>
-        </div>
-      </div>
-  
-      <nav>
-        <ul class="menu">
-          <li><a href="index.html">INICIO</a> </li>
-  
-          <li><a href="productos.html">PRODUCTOS</a> </li>
-          <li><a href="reserva.html">RESERVAS</a> </li>
-          <li><a href="quienes-somos.html">QUIENES SOMOS</a> </li>
-          <li><a href="login.html">LOGIN</a> </li>
-        </ul>
-      </nav>
-  
-    </header>
-    <div class="container">
+<div class="container">
       <div class="row">
         <div class="col">
           <ngb-carousel>
             <ng-template ngbSlide>
-              <div class="picsum-img-wrapper">
+              <div class="picsum-img-wrapper slide-container">
                 <img src="assets/images/img-6.jpeg" alt="Angular Carousel 1">
               </div>
               <div class="carousel-caption">
-                <h3></h3>
-                <p></p>
+                <h3>La mente sana y la cerveza muy fría</h3>
+                <p>Vení a conocer las mejores cervezas del inframundo</p>
               </div>
             </ng-template>
             <ng-template ngbSlide>
-              <div class="picsum-img-wrapper">
+              <div class="picsum-img-wrapper slide-container">
                 <img src="assets/images/img-7.jpeg" alt="Angular Carousel 2">
               </div>
               <div class="carousel-caption">
               </div>
             </ng-template>
             <ng-template ngbSlide>
-              <div class="picsum-img-wrapper">
+              <div class="picsum-img-wrapper slide-container">
                 <img src="assets/images/img-8.jpeg" alt="Angular Carousel 1">
               </div>
               <div class="carousel-caption">
               </div>
             </ng-template>
             <ng-template ngbSlide>
-              <div class="picsum-img-wrapper">
+              <div class="picsum-img-wrapper slide-container">
                 <img src="assets/images/bar.jpeg" alt="Angular Carousel 1">
               </div>
               <div class="carousel-caption">
@@ -62,7 +36,9 @@
         </div>
       </div>
     </div>
-  
+
+    <app-items-list></app-items-list>
+
     <footer class="footer-style">
       Copyright © Todos los derechos reservados
     </footer>

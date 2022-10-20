@@ -1,0 +1,108 @@
+<main>
+  <mat-card class="card-login">
+    <mat-tab-group>
+      <mat-tab label="Login">
+
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="form">
+          <mat-form-field appearance="legacy">
+            <mat-label>Email</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa tu email"
+              name="email"
+              formControlName="email"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="legacy">
+            <mat-label>Contraseña</mat-label>
+            <input
+              type="password"
+              matInput
+              placeholder="Ingresa tu contraseña"
+              name="password"
+              formControlName="password"
+            />
+          </mat-form-field>
+
+          <button type="submit" mat-raised-button color="accent">Login</button>
+        </form>
+
+      </mat-tab>
+      <mat-tab label="Register">
+        <form [formGroup]="registerForm" (ngSubmit)="register()" class="form">
+          <mat-form-field appearance="legacy">
+            <mat-label>Nombre</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa tu nobre"
+              name="fname"
+              formControlName="fname"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="legacy">
+            <mat-label>Apellido</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa tu apellido"
+              name="lname"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="legacy">
+            <mat-label>Email</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa tu email"
+              name="email"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="legacy">
+            <mat-label>Usuario</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa tu usuario"
+              name="user"
+            />
+          </mat-form-field>
+
+          <mat-form-field appearance="legacy">
+            <mat-label>Contraseña</mat-label>
+            <input
+              type="password"
+              matInput
+              placeholder="Ingresa tu contraseña"
+              name="password"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="legacy">
+            <mat-label>Confirma la contraseña</mat-label>
+            <input
+              type="password"
+              matInput
+              placeholder="repite la contraseña"
+              name="password2"
+            />
+          </mat-form-field>
+          <mat-form-field appearance="legacy">
+            <mat-label>Dirección</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa tu dirección"
+              name="address"
+            />
+          </mat-form-field>
+
+          <button type="submit" mat-raised-button color="accent">Submit</button>
+        </form>
+
+
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</main>
