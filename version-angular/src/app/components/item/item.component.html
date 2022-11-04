@@ -1,0 +1,28 @@
+<article class="product-card">
+  <img class="product-card__image" src="{{ item.thumbnail }}" alt="" />
+  <a>
+    <h3 class="product-card__name">{{ item.name }}</h3>
+  </a>
+  <span class="product-card__name">${{ item.price }}</span>
+
+  <div class="count-container">
+    <div class="count-container__contador">
+      <button
+        class="count-container__button"
+        (click)="addProduct(-1)"
+        [disabled]="qty == 1"
+      >
+        -
+      </button>
+      <span class="count-container__qty"> {{ qty }}</span>
+      <button
+        class="count-container__button"
+        (click)="addProduct(1)"
+        [disabled]="qty == item.stock"
+      >
+        +
+      </button>
+    </div>
+    <button class="button-primary" (click)="addToCart()">Añadir</button>
+  </div>
+</article>
