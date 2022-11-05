@@ -1,8 +1,14 @@
-header{
+.header{
+  display:flex;
+  justify-content:center;
+  padding: 20px 15px;
+}
+.header-container{
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   justify-content: space-between;
-  padding: 20px 15px;
-
+  align-items: center;
 }
 
 .header-brand{
@@ -46,6 +52,7 @@ header{
   color: #FA0050;
   font-weight: 600;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .cart-button{
@@ -55,3 +62,17 @@ header{
   border-radius: 3px;
 }
 
+
+.mobile-menu{
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .links-container{
+    display:none;
+  }
+
+  .mobile-menu{
+    display: block;
+  }
+}

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from "@angular/forms";
 
 @Component({
   selector: 'app-reserva',
@@ -8,9 +13,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReservaComponent implements OnInit {
 
-  constructor() { }
+  reservaForm: FormGroup = this.formBuilder.group({
+    date:["", [ Validators.required ]],
+    time:["",[ Validators.required ]],
+    persons:["",[ Validators.required]]
+  });
+
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+  }
+
+
+  onSubmit(){
+
+    console.log(this.reservaForm);
+    console.log('datos obtenidos: ', this.reservaForm.value );
   }
 
 }

@@ -1,7 +1,7 @@
 <main>
   <mat-card class="card-login">
     <mat-tab-group>
-      <mat-tab label="Login">
+      <mat-tab label="Iniciar Sesión">
 
         <form [formGroup]="loginForm" (ngSubmit)="login()" class="form">
           <mat-form-field appearance="legacy">
@@ -26,18 +26,18 @@
             />
           </mat-form-field>
 
-          <button type="submit" mat-raised-button color="accent">Login</button>
+          <button type="submit" mat-raised-button color="accent">Iniciar Sesión</button>
         </form>
 
       </mat-tab>
-      <mat-tab label="Register">
+      <mat-tab label="Registro">
         <form [formGroup]="registerForm" (ngSubmit)="register()" class="form">
           <mat-form-field appearance="legacy">
             <mat-label>Nombre</mat-label>
             <input
               type="text"
               matInput
-              placeholder="Ingresa tu nobre"
+              placeholder="Ingresa tu nombre"
               name="fname"
               formControlName="fname"
             />
@@ -98,7 +98,7 @@
             />
           </mat-form-field>
 
-          <button type="submit" mat-raised-button color="accent">Submit</button>
+          <button type="submit" mat-raised-button color="accent">Enviar</button>
         </form>
 
 
