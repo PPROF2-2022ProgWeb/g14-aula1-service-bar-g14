@@ -1,18 +1,40 @@
-.card-quienessomos{
-  margin: 80px auto ;
-  width: 400px;
-  padding: 20px 15px;
+.card-quienes-somos{
+  max-width: 600px;
+  margin: 60px auto;
+  display:flex;
+  justify-content:space-around;
+  color: #FA0050;
+    
 }
 
-.form{
-  display: flex;
+.example-header-image {
+  background-image: url('https://images.pexels.com/photos/14159270/pexels-photo-14159270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+}
+
+.form-quienessomos{
+  display:flex;
   flex-direction: column;
-  gap:10px;
-  margin-top: 40px;
-
+  gap:24px;
 }
 
-
-.form button{
-  margin-top: 30px;
+.mat-card-header
+{
+  max-width: 600px;
+  margin: 60px auto;
+  display:flex;
+  justify-content:space-around;
+  color: #FA0050;
+    
+}
+.mat-card-subtitle{
+  max-width: 600px;
+  margin: 60px auto;
+  display:flex;
+  justify-content:space-around;
+  color: #FA0050;
+}
+.buttons-row{
+  display:flex;
+  justify-content:space-around;
 }
