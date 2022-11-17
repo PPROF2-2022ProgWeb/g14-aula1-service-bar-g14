@@ -8,27 +8,38 @@
 
     <form [formGroup]="reservaForm" (ngSubmit)="onSubmit()" class="form-reserva">
       <mat-form-field appearance="fill">
-        <mat-label>Choose a date</mat-label>
+        <mat-label>Indica la fecha</mat-label>
         <input required formControlName="date" matInput [matDatepicker]="picker">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
 
+      <app-error-display [control]="reservaForm.controls['date']"></app-error-display>
+
+
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Hora</mat-label>
         <input required formControlName="time" matInput placeholder="Ingrese la hora" type="time" value="">
       </mat-form-field>
+
+      <app-error-display [control]="reservaForm.controls['time']"></app-error-display>
+
 
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Cantidad de personas</mat-label>
         <input required formControlName="persons" type="number" matInput placeholder="Cantidad de personas"  value="">
       </mat-form-field>
 
+      <app-error-display [control]="reservaForm.controls['persons']"></app-error-display>
+
+
       <div class="buttons-row">
-        <button mat-raised-button color="primary">Ver mis reservas</button>
+        <button mat-raised-button color="primary" (click)="goToBookings()">Ver mis reservas</button>
         <button [disabled]=" reservaForm.status === 'INVALID' ? true: false" type="submit" mat-raised-button color="accent">Enviar</button>
       </div>
+
+      <p class="alert alert-dante" *ngIf="errorMsg != ''">{{errorMsg}}</p>
 
     </form>
 

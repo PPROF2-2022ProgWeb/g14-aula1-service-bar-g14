@@ -1,0 +1,81 @@
+<div class="container row col-md-12">
+    <form [formGroup]="productForm" (ngSubmit)="addProduct()" class="form d-flex flex-column">
+        <mat-form-field appearance="legacy">
+            <mat-label>Nombre</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa tuel nombre"
+              name="nombre"
+              formControlName="nombre"
+            />
+          </mat-form-field>
+          <app-error-display [control]="productForm.controls['nombre']"></app-error-display>
+
+          <mat-form-field appearance="legacy">
+            <mat-label>Precio</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa el precio"
+              name="precio"
+              formControlName="precio"
+            />
+          </mat-form-field>
+          <app-error-display [control]="productForm.controls['precio']"></app-error-display>
+
+          <mat-form-field appearance="legacy">
+            <mat-label>Stock Actual</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa el stock actual"
+              name="stockAct"
+              formControlName="stockAct"
+            />
+          </mat-form-field>
+          <app-error-display [control]="productForm.controls['stockAct']"></app-error-display>
+
+          <mat-form-field appearance="legacy">
+            <mat-label>Stock Mínimo</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa el stock mínimo"
+              name="stockMin"
+              formControlName="stockMin"
+            />
+          </mat-form-field>
+          <app-error-display [control]="productForm.controls['stockMin']"></app-error-display>
+
+          <mat-form-field appearance="legacy">
+            <mat-label>Stock Maximo</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa el stock máximo"
+              name="stockMax"
+              formControlName="stockMax"
+            />
+          </mat-form-field>
+          <app-error-display [control]="productForm.controls['stockMax']"></app-error-display>
+
+          <mat-form-field appearance="legacy">
+            <mat-label>Url Imagen del producto</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa la url de la imagen"
+              name="urlImagen"
+              formControlName="urlImagen"
+            />
+          </mat-form-field>
+          <app-error-display [control]="productForm.controls['urlImagen']"></app-error-display>
+
+          <button type="submit" mat-raised-button color="accent" [disabled]="!productForm.valid">Crear producto</button>
+
+          <div *ngIf="!!prodErrorMsg" class="alert alert-danger mt-1">
+            {{prodErrorMsg}}
+            </div>
+    </form>
+</div>

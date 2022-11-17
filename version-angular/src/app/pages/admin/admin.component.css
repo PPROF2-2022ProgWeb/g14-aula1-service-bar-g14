@@ -1,0 +1,10 @@
+a {
+    color: #FA0050;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+svg {
+    max-width: 80px;
+}

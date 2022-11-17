@@ -76,3 +76,14 @@
     display: block;
   }
 }
+
+.customer-name {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: darkred;
+  margin: 0;
+}
+
+.signout {
+  cursor: pointer;
+}

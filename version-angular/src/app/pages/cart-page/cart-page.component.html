@@ -6,20 +6,20 @@
         <th scope="col">Producto</th>
         <th scope="col">Precio</th>
         <th scope="col">Cantidad</th>
-        <th scope="col">Action</th>
+        <th scope="col">&nbsp;</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let prod of products">
-        <th scope="row">{{ prod.id }}</th>
+        <th scope="row">{{ prod.idProducto }}</th>
         <td>
-          <img [src]="prod.thumbnail" class="me-2" style="width: 20px" />
-          {{ prod.name }}
+          <img [src]="prod.urlImagen" class="me-2" style="width: 20px" />
+          {{ prod.nombre }}
         </td>
-        <td>{{ prod.price | number }}</td>
+        <td>{{ prod.precio | number }}</td>
         <td>{{ prod.qty | number }}</td>
         <td>
-          <button (click)="deleteItem(prod.id)">
+          <button (click)="deleteItem(prod.idProducto)">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"

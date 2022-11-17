@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
-import { Product } from '../../interface/products';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-item',
@@ -9,15 +9,13 @@ import { Product } from '../../interface/products';
 })
 export class ItemComponent implements OnInit {
   @Input() item: Product = {
-    name:'',
-    price:0,
-    thumbnail:'',
-    size: '',
-    stock:0,
-    description:'',
-    vendor:'',
-    category:'',
-    id:0
+    nombre:'',
+    precio:0,
+    urlImagen: '',
+    stockAct:0,
+    stockMin: 0,
+    stockMax: 0,
+    idProducto: 0
   };
 
   qty:number=1;
