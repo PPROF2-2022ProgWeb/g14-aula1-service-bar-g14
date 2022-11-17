@@ -24,14 +24,21 @@ import { HeaderComponent } from './components/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './pages/login/login.component';
 import { ReservaComponent } from './pages/reserva/reserva.component';
+import { ListaReservasComponent } from './pages/lista-reservas/lista-reservas.component';
 import { QuienesSomosComponent } from './pages/quienes-somos/quienes-somos.component';
 import { ButtonPayComponent } from './components/button-pay/button-pay.component';
-
-
+import { ErrorDisplayComponent } from './components/error-display/error-display.component'
+import { httpInterceptorProviders } from './http/http.interceptor';
+import { AdminComponent } from './pages/admin/admin.component';
+import { AdminProductListComponent } from './pages/admin-product-list/admin-product-list.component';
+import { AdminAddProductComponent } from './pages/admin-add-product/admin-add-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminComponent,
+    AdminProductListComponent,
+    AdminAddProductComponent,
     HomeComponent,
     ItemsListComponent,
     ItemComponent,
@@ -40,8 +47,10 @@ import { ButtonPayComponent } from './components/button-pay/button-pay.component
     HeaderComponent,
     LoginComponent,
     ReservaComponent,
+    ListaReservasComponent,
     QuienesSomosComponent,
     ButtonPayComponent,
+    ErrorDisplayComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +70,7 @@ import { ButtonPayComponent } from './components/button-pay/button-pay.component
     MatNativeDateModule
 
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

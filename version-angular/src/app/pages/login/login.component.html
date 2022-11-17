@@ -15,6 +15,8 @@
             />
           </mat-form-field>
 
+          <app-error-display [control]="loginForm.controls['email']"></app-error-display>
+
           <mat-form-field appearance="legacy">
             <mat-label>Contraseña</mat-label>
             <input
@@ -26,7 +28,13 @@
             />
           </mat-form-field>
 
-          <button type="submit" mat-raised-button color="accent">Iniciar Sesión</button>
+          <app-error-display [control]="loginForm.controls['password']"></app-error-display>
+
+          <div *ngIf="!!loginErrorMsg" class="alert alert-danger mt-1">
+          {{loginErrorMsg}}
+          </div>
+
+          <button type="submit" mat-raised-button color="accent" [disabled]="!loginForm.valid">Iniciar Sesión</button>
         </form>
 
       </mat-tab>
@@ -39,9 +47,10 @@
               matInput
               placeholder="Ingresa tu nombre"
               name="fname"
-              formControlName="fname"
+              formControlName="nombre"
             />
           </mat-form-field>
+          <app-error-display [control]="registerForm.controls['nombre']"></app-error-display>
           <mat-form-field appearance="legacy">
             <mat-label>Apellido</mat-label>
             <input
@@ -49,8 +58,46 @@
               matInput
               placeholder="Ingresa tu apellido"
               name="lname"
+              formControlName="apellido"
             />
           </mat-form-field>
+          <app-error-display [control]="registerForm.controls['apellido']"></app-error-display>
+          <mat-form-field appearance="legacy">
+            <mat-label>Dni</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa tu dni"
+              name="dni"
+              formControlName="dni"
+            />
+          </mat-form-field>
+          <app-error-display [control]="registerForm.controls['dni']"></app-error-display>
+
+          <mat-form-field appearance="legacy">
+            <mat-label>Telefono</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa tu telefono"
+              name="telefono"
+              formControlName="telefono"
+            />
+          </mat-form-field>
+          <app-error-display [control]="registerForm.controls['telefono']"></app-error-display>
+
+          <mat-form-field appearance="legacy">
+            <mat-label>Dirección</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa tu dirección"
+              name="address"
+              formControlName="direccion"
+            />
+          </mat-form-field>
+          <app-error-display [control]="registerForm.controls['direccion']"></app-error-display>
+
           <mat-form-field appearance="legacy">
             <mat-label>Email</mat-label>
             <input
@@ -58,17 +105,11 @@
               matInput
               placeholder="Ingresa tu email"
               name="email"
+              formControlName="email"
             />
           </mat-form-field>
-          <mat-form-field appearance="legacy">
-            <mat-label>Usuario</mat-label>
-            <input
-              type="text"
-              matInput
-              placeholder="Ingresa tu usuario"
-              name="user"
-            />
-          </mat-form-field>
+
+          <app-error-display [control]="registerForm.controls['email']"></app-error-display>
 
           <mat-form-field appearance="legacy">
             <mat-label>Contraseña</mat-label>
@@ -77,8 +118,11 @@
               matInput
               placeholder="Ingresa tu contraseña"
               name="password"
+              formControlName="password"
             />
           </mat-form-field>
+          <app-error-display [control]="registerForm.controls['password']"></app-error-display>
+
           <mat-form-field appearance="legacy">
             <mat-label>Confirma la contraseña</mat-label>
             <input
@@ -86,19 +130,14 @@
               matInput
               placeholder="repite la contraseña"
               name="password2"
-            />
-          </mat-form-field>
-          <mat-form-field appearance="legacy">
-            <mat-label>Dirección</mat-label>
-            <input
-              type="text"
-              matInput
-              placeholder="Ingresa tu dirección"
-              name="address"
+              formControlName="repassword"
             />
           </mat-form-field>
 
-          <button type="submit" mat-raised-button color="accent">Enviar</button>
+          <app-error-display [control]="registerForm.controls['repassword']"></app-error-display>
+
+          <button type="submit" mat-raised-button color="accent" [disabled]="!registerForm.valid" *ngIf="!registroExitoso">Enviar</button>
+          <p class="alert alert-success" *ngIf="registroExitoso">Te registraste con exito</p>
         </form>
 
 

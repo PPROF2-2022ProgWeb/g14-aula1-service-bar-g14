@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../interface/products';
+import { Product } from '../models/product';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +13,10 @@ export class CartService {
 
   addProduct( product:Product ){
 
-    if( this.cartProducts.some( el => el.id === product.id ) ){
-      // ya existe un producto con el mismo id
+    if( this.cartProducts.some( el => el.idProducto === product.idProducto ) ){
+      // ya existe un producto con el mismo idProducto
       const newCart = this.cartProducts.map( prod => {//genero un nuevo array con productos del carrito pero con la qty modificada
-        if(prod.id === product.id ){
+        if(prod.idProducto === product.idProducto ){
           prod.qty = prod.qty! + product.qty!;
         }
         return prod;
@@ -37,7 +37,7 @@ export class CartService {
   }
 
   deleteProductById(id:number){
-    const newCart = this.cartProducts.filter( prod => prod.id !== id );
+    const newCart = this.cartProducts.filter( prod => prod.idProducto !== id );
     this.cartProducts = newCart;
   }
 
