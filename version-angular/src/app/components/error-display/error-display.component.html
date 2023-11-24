@@ -1,0 +1,14 @@
+<div *ngIf="control.invalid && control.dirty" class="alert alert-danger mt-1">
+    <div *ngIf="control.errors?.['required']">
+        Este dato es requerido
+    </div>
+    <div *ngIf="control.errors?.['email']">
+        Por favor ingrese un email válido
+    </div>
+    <div *ngIf="control.errors?.['minlength']">
+        Por favor ingrese más caracteres
+    </div>
+    <div *ngIf="control.errors?.['max']">
+        Por favor ingrese un número menor
+    </div>
+</div>

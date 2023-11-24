@@ -1,3 +1,22 @@
+<div class="container d-flex justify-content-center">
+    <form [formGroup]="searchForm" (ngSubmit)="search()" class="form">
+        <mat-form-field appearance="legacy">
+            <mat-label>Busqueda</mat-label>
+            <input
+              type="text"
+              matInput
+              placeholder="Ingresa algo para buscar"
+              name="search"
+              formControlName="search"
+            />
+          </mat-form-field>
+          &nbsp;
+          <button class="ml-2" type="submit" mat-raised-button color="accent" [disabled]="!searchForm.valid">Buscar</button>&nbsp;
+          <button class="ml-2" type="button" mat-raised-button color="accent" (click)="clearSearch()">Borrar filtros</button>
+    </form>
+    
+</div>
+
 <div class="producs-container">
 
     <app-item *ngFor="let item of products" 

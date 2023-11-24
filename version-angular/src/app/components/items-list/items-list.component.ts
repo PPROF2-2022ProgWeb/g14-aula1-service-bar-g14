@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../interface/products';
-import { BackendService } from '../../services/backend.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProductService } from 'src/app/services/product.service';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-items-list',
@@ -10,13 +11,32 @@ import { BackendService } from '../../services/backend.service';
 export class ItemsListComponent implements OnInit {
 
   products:Product[]=[];
+  allProducts:Product[] = [];
 
-  constructor( private backendService:BackendService ){ }
+  searchForm: FormGroup = this.formBuilder.group({
+
+    search: ["", [Validators.required, Validators.minLength(2)]],
+
+  });
+
+  constructor( private productService:ProductService, private formBuilder: FormBuilder ){ }
 
   ngOnInit(): void { //método que se ejecuta a penas se monta el componente
 
-    this.backendService.getProducts().subscribe( resp => this.products = resp.products )
+    this.productService.list().subscribe( resp => {
+      this.products = resp
+      this.allProducts = resp
+    } )
 
+  }
+
+  search() {
+    this.products = this.products.filter(prod => prod.nombre.toLowerCase().includes(this.searchForm.value.search))
+  }
+
+  clearSearch() {
+    this.products = this.allProducts
+    this.searchForm.setValue({search: ''})
   }
 
 }

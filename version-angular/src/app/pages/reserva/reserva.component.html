@@ -1,72 +1,47 @@
 <main>
   <mat-card class="card-reserva">
-    <head>
-      <meta charset="UTF-8">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Solicita una reserva</mat-card-title>
+      <mat-card-subtitle>Gestiona tu reserva a través de nuestra plataforma</mat-card-subtitle>
+    </mat-card-header>
 
-      <link rel="https://material.angular.io/components/datepicker/overview#datepicker-custom-icon" href="">
-      <link rel="" href="">
-      <title>Customer Service Bar</title>
-    </head>
+    <form [formGroup]="reservaForm" (ngSubmit)="onSubmit()" class="form-reserva">
+      <mat-form-field appearance="fill">
+        <mat-label>Indica la fecha</mat-label>
+        <input required formControlName="date" matInput [matDatepicker]="picker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
 
-<body>
- 
-  <div>
-    <h1 class="title">Customer Service Bar</h1>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col mb-4">
-        <i class="fas fa-bars menu-button" onclick="toggleMenu(event)"></i>
-      </div>
-    </div>
-  </div>
+      <app-error-display [control]="reservaForm.controls['date']"></app-error-display>
 
-  <h1 class="title">Reservas</h1>
-  <a href="lista-reservas.">Ver mis reservas</a> 
-  <div class="usuario-form">
 
-    <form action="./confirmacion-reserva." class="needs-validation-reserva" method="post" novalidate>
-      <div class="row">
-        <div class="col">
-          <label for="txt-fecha" class="form-label">Fecha</label>
-          <input class="user form-control" id="txt-fecha" type="date" name="fecha" required>
-          
-          <div class="invalid-feedback">
-            Ingrese una fecha igual o mayor que la actual
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <label for="txt-hora" class="form-label">Hora</label>
-          <input class="user form-control" id="txt-hora" type="time" name="hora" required>
-          <div class="invalid-feedback">
-            Ingrese una hora mayor que la actual
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <label for="txt-personas" class="form-label">Cantidad de personas</label>
-          <input class="user form-control" id="txt-personas" type="number" name="cantidadPersonas" required>
-          <div class="invalid-feedback">
-            Ingrese una cantidad de personas entre 1 y 100
-          </div>
-        </div>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Hora</mat-label>
+        <input required formControlName="time" matInput placeholder="Ingrese la hora" type="time" value="">
+      </mat-form-field>
+
+      <app-error-display [control]="reservaForm.controls['time']"></app-error-display>
+
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Cantidad de personas</mat-label>
+        <input required formControlName="persons" type="number" matInput placeholder="Cantidad de personas"  value="">
+      </mat-form-field>
+
+      <app-error-display [control]="reservaForm.controls['persons']"></app-error-display>
+
+
+      <div class="buttons-row">
+        <button mat-raised-button color="primary" (click)="goToBookings()">Ver mis reservas</button>
+        <button [disabled]=" reservaForm.status === 'INVALID' ? true: false" type="submit" mat-raised-button color="accent">Enviar</button>
       </div>
 
+      <p class="alert alert-dante" *ngIf="errorMsg != ''">{{errorMsg}}</p>
 
-
-      <button class="btn btn-bar">Enviar</button>
     </form>
-
-
-  </div>
-  <footer class="footer-style">
-    Copyright © Todos los derechos reservados
-  </footer>
-  <script src=""></script>
-</body>
 
   </mat-card>
 </main>

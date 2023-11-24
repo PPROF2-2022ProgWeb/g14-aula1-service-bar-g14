@@ -1,18 +1,21 @@
+
 .card-reserva{
-  margin: 80px auto ;
-  width: 400px;
-  padding: 20px 15px;
+  max-width: 600px;
+  margin: 60px auto;
 }
 
-.form{
-  display: flex;
+.example-header-image {
+  background-image: url('https://images.pexels.com/photos/14159270/pexels-photo-14159270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+}
+
+.form-reserva{
+  display:flex;
   flex-direction: column;
-  gap:10px;
-  margin-top: 40px;
-
+  gap:24px;
 }
 
-
-.form button{
-  margin-top: 30px;
+.buttons-row{
+  display:flex;
+  justify-content:space-around;
 }
